@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/header.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="js/slider.js"></script>
+
 
 </head>
 
@@ -75,14 +78,13 @@
             });
         </script>
 <!-- END HEADER NAVBAR -->
-        <div class="main-before-slider">
 
+<!-- BEGIN SLIDER -->
+        <div class="main-before-slider">
         </div>
         <div class="main-wrapper">
             <div class="slyder-wrapper">
-<!-- SLYDER SECTION -->
                 <div class="slideshow-container">
-
                     <div class="mySlides slideintoleft slide-1">
                         <img src="/img/001.jpg" style="width:100%">
                     </div>
@@ -149,106 +151,10 @@
                     </div>
 
                 </div>
-                <script>
-                    (function (window, document, $) {
-                        $(function () {
-                            var slideIndex = 0;
-                            var $slides = $('.mySlides');
-                            var $dots = $('.dot');
-                            var $stop = $('.stop');
-                            window.control = false;
-                            window.auto = true;
-                            window.stop = false;
-                            $slides.hide();
-                            $slides.removeClass('hide');
-                            autoSlide();
-                            $dots.on('click', function () {
-                                clearTimeout(timer);
-                                console.log($(this).index());
-                                slideIndex = $(this).index();
-                                window.auto = false;
-                                autoSlide();
-                            });
-                            $('.next').on('click', function () {
-                                window.control = true;
-                                showSlides(slideIndex += 1);
-                                slideIndex += -1;
-                                window.control = false;
-                                window.auto = false;
-                                showSlides();
-                                console.log("executes-next");
-                            });
-                            $('.prev').on('click', function () {
-                                window.control = true;
-                                showSlides(slideIndex += -1);
-                                slideIndex += -1;
-                                window.control = false;
-                                window.auto = false;
-                                showSlides();
-                            });
-                            $stop.on('click', function (event) {
-                                event.preventDefault();
-                                if (!window.stop) {
-                                    $(this).text('Start');
-                                    clearTimeout(timer);
-                                    window.stop = true;
-                                } else {
-                                    $(this).text('Stop');
-                                    autoSlide();
-                                    window.stop = false;
-                                }
-                            });
-
-                            function showSlides(n) {
-                                if (!window.control) {
-                                    autoSlide();
-                                } else {
-                                    controlSlide(n)
-                                }
-                            }
-
-                            function myTimer(func) {
-                                timer = setTimeout(func, 3000);
-                            }
-
-                            function autoSlide() {
-                                $stop.text('Stop');
-                                window.stop = false;
-                                $slides.each(function () {
-                                    $(this).hide();
-                                });
-                                slideIndex += 1;
-                                if (!window.auto) {
-                                    if (slideIndex > $slides.length) {
-                                        slideIndex = 0
-                                    };
-                                    $slides.eq(slideIndex - 1).show();
-                                } else {
-                                    if (slideIndex > $slides.length) {
-                                        slideIndex = 1
-                                    };
-                                    $slides.eq(slideIndex - 1).show();
-                                }
-                                $('.active').removeClass('active');
-                                $dots.eq(slideIndex - 1).addClass('active');
-                                myTimer(autoSlide);
-                                window.execute = true;
-                            }
-
-                            function controlSlide(n) {
-                                if (n > $slides.length) slideIndex = 1;
-                                if (0 > n) slideIndex = $slides.length - 1;
-                                $slides.each(function () {
-                                    $(this).hide();
-                                });
-                                $slides.eq(slideIndex - 1).show();
-                                clearTimeout(timer);
-                            }
-                        });
-                    })(window, document, window.jQuery);
-                </script>
-                <!-- END SLIDER SECTION -->
             </div>
+<!-- END SLIDER SECTION -->
+
+            
             <div class="main-text1">
                 <div class="main-title">
                     Вітаємо вас на сайті компанії "ZhyVen"!
@@ -297,7 +203,52 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
+<!-- START MAIN -->
+        <main class="main">
+            <div class="col-2 left">
+                <div class="main-col-2-block">
+                    <a href="">
+                        <img src="img/001.jpg" class="col2-img">
+                    </a>
+                </div>
+            </div>
+            <div class="col-2 right">
+                    <div class="main-col-2-block">
+                            <a href="">
+                                <img src="img/001.jpg" class="col2-img">
+                            </a>
+                        </div>
+            </div>
+        </main>
+    </div>
+<!-- END MAIN -->
+
+<!-- START FOOTER -->
+        <footer class="footer">
+            <div class="footer-wrapper">
+                <div class="footer-left col-3 ">
+                    <i class="fa fa-instagram" style="color:white; font-size:32px;padding:40px 7px;" ></i>
+                    <i class="fa fa-facebook-square" style="color:white; font-size:32px;padding:40px 7px;"></i>
+                    <i class="fa fa-google-plus-square" style="color:white; font-size:32px;padding:40px 7px;"></i>
+                    <i class="fa fa-map-marker" style="color:white; font-size:32px;padding:40px 7px;"></i>
+                </div>
+                <div class="footer-leftcenter col-3">
+                    <i class="fa fa-envelope" style="color:white; font-size:32px;padding:10px 7px;" ></i><br>
+                        zhyven2012@gmail.com
+                        zhyven2012.com
+                </div>
+                <div class="footer-rightcenter col-3 ">
+                    <i class="fa fa-phone" style="color:white; font-size:32px;padding:10px 7px;" ></i>
+                    <p class="footer-text">тел.моб: +380969391290</p>
+                </div>
+                <div class="footer-right col-3">
+                    <i class="fa fa-map-marker" style="color:white; font-size:32px;padding:10px 7px;"></i>
+                    <p class="footer-text">м.Львів</p>
+                </div>
+            </div>
+        </footer>
+<!-- END FOOTER -->
     </div>
 </body>
 
